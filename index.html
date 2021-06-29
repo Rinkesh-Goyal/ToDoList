@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>ToDo</title>
+</head>
+<body>
+   <header>
+        <div class="icon">
+            <img id="icon-img" src=".\Assets\to-do-list (1).png" alt="ToDo-icon">
+        </div>   
+
+        <div class="name">
+            ToDo List
+        </div>
+    </header> 
+
+    <main class="main">
+        <nav class="nav" id="nav">
+            <div class="sidebar">
+                
+                <button class="btn" id="btn-add-task">
+                    <i class="fas fa-plus"></i>
+                        Add Task
+                </button>
+                <h1 class="projects-title">Projects</h1>
+                
+                <div class="projects-list" id="projects-list"></div>
+                
+                <div class="add-project-popup" id="add-project-popup">
+                    
+                    <input type="text" class="input-add-project" id="input-add-project">
+                    
+                    <div class="add-project-popup-buttons">
+                        
+                        <button class="button-add-project-popup" id="button-add-project-popup">Add</button>
+                        
+                        <button class="button-cancel-project-popup" id="button-cancel-project-popup">Cancel</button>
+                    
+                    </div>
+               
+                </div>
+                <button class="btn" id="btn-add-project">
+                    
+                    <i class="fas fa-plus"></i>
+                    
+                        Add Project
+                    
+                    </button>
+            </div>
+        </nav>
+        <div class="project-preview" id="project-preview"></div>
+    </main>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
