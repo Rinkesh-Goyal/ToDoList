@@ -6,7 +6,7 @@
   }
   
 body {
-    font-size: 1.2rem;
+    font-size: 16px;
     font-family: "Roboto", sans-serif;
     color: var(--primary-dark);
     background-color: var(--primary-light);
@@ -62,7 +62,7 @@ header{
 
 .nav {
     flex: 1;
-    max-width: 20%;
+    max-width: 300px;
     padding: 2rem;
     background-color: var(--secondary-light);
 }
@@ -70,7 +70,7 @@ header{
     display: block;
 }
 
-.btn {
+.button-default-project {
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -95,14 +95,26 @@ header{
     background-color: var(--secondary-light);
     text-align: left;
   }
-
-.button-project.active,.btn.active
+  .button-add-project {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    background-color: var(--secondary-light);
+    text-align: left;
+  }
+  
+  .button-add-project.active {
+    display: none;
+  }
+.button-project.active,
+.button-default-project.active
 {
   font-weight: bold;
   background-color: #ccc;
 }
 
-.button-project:hover,.btn:hover
+.button-project:hover,.button-default-project:hover,.button-add-project:hover
 {
     background-color: #ccc;
 }
@@ -115,50 +127,63 @@ header{
     visibility: visible;
   }
 
-  .add-project-popup {
+  .fa-times {
+    margin-right: 0;
+  }
+
+  .add-project-popup,
+  .add-task-popup {
     display: none;
     width: 100%;
     padding: 1rem;
     text-align: center;
   }
   
-  .add-project-popup.active {
+  .add-project-popup.active,
+  .add-task-popup.active {
     display: block;
   }
 
-  .input-add-project-popup {
-    width: 100%;
+  .input-add-project-popup,
+  .input-add-task-popup {
+    width: 89%;
     padding: 1rem;
     border: 1px solid #aaa;
     border-radius: 5px;
     margin-bottom: 1rem;
   }
 
-  .add-project-popup-buttons {
+  .add-project-popup-buttons,
+  .add-task-popup-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1%;
   }
 
-  .button-add-project-popup{
+  .button-add-project-popup,
+  .button-add-task-popup{
     width: 45%;
     border: 1px solid #99dd99;
     background-color: #aaffaa;
     font-weight: bold;
   }
 
-  .button-cancel-project-popup {
+  .button-cancel-project-popup,
+  .button-cancel-task-popup {
     width: 45%;
     border: 1px solid #eeadad;
     background-color: #ffbebe;
     font-weight: bold;
   }
 
-  .button-add-project-popup:hover {
+  .button-add-project-popup:hover,
+  .button-add-task-popup:hover {
     background-color: #a6f0a6;
   }
   
-  .button-cancel-project-popup:hover {
+  .button-cancel-project-popup:hover,
+  .button-cancel-task-popup:hover {
     background-color: #f5b2b2;
   }
 
@@ -171,4 +196,18 @@ header{
   .project-preview h1 {
     padding: 0 1rem;
     margin-bottom: 1rem;
+  }
+
+  /* footer */
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
   }
