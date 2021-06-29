@@ -54,7 +54,7 @@ export default class UI{
         const addTaskButton = document.getElementById('button-add-task');
         const addTaskPopupButton = document.getElementById('button-add-task-popup');
         const cancelTaskPopupButton = document.getElementById('button-cancel-task-popup');
-        // const addTaskPopupInput = document.getElementById('input-add-Task-popup');
+        // const addTaskPopupInput = document.getElementById('input-add-task-popup');
 
         addTaskButton.addEventListener('click', UI.openAddTaskPopup);
         addTaskPopupButton.addEventListener('click', UI.addTask);
@@ -63,25 +63,33 @@ export default class UI{
     }
 
     static openAddTaskPopup(){
-        const addTaskPopup = document.getElementById('add-Task-popup');
-        // const addTaskButton = document.getElementById('button-add-Task');
+        const addTaskPopup = document.getElementById('add-task-popup');
+        
         // UI.closeAllPopups();
         addTaskPopup.classList.add('active');
-        // addTaskButton.classList.add('active');
+        
     }
 
     static closeAddTaskPopup() {
-        const addTaskPopup = document.getElementById('add-Task-popup');
-        // const addTaskButton = document.getElementById('button-add-Task');
-        const addTaskPopupInput = document.getElementById('input-add-Task-popup');
-    
+        const addTaskPopup = document.getElementById('add-task-popup');
+        
+        const addTitlePopupInput = document.getElementById('input-add-title-popup');
+        const addDatePopupInput = document.getElementById('input-add-date-popup');
+        const addDescPopupInput = document.getElementById('input-add-desc-popup');
+        const addPriorityPopupInput = document.getElementById('input-add-priority-popup');
+        const addProjectPopupInput = document.getElementById('input-add-project-popup');
+
         addTaskPopup.classList.remove('active');
-        // addTaskButton.classList.remove('active');
-        addTaskPopupInput.value = '';
+        
+        addTitlePopupInput.value = '';
+        addDatePopupInput.value = '';
+        addDescPopupInput.value = '';
+        addPriorityPopupInput.value = '';
+        addProjectPopupInput.value = '';
       }
     
     static addTask(){
-        const addTaskPopupInput = document.getElementById('input-add-Task-popup');
+        const addTaskPopupInput = document.getElementById('input-add-title-popup');
           const TaskName = addTaskPopupInput.value;
           console.log(TaskName);
     }

@@ -34,6 +34,8 @@
                 
                 <div class="projects-list" id="projects-list"></div>
                 
+                <!--add project popup-->
+                
                 <div class="add-project-popup" id="add-project-popup">
                     
                     <input type="text" class="input-add-project-popup" id="input-add-project-popup">
@@ -56,24 +58,29 @@
                     </button>
             </div>
         </nav>
+        
         <div class="project-preview" id="project-preview">
+        <!--Add task popup-->
             <div class="add-task-popup" id="add-task-popup">
-                <label for="title">Title:</label>
-                <input type="text" name="title" class="input-add-title-popup input-add-task-popup" id="input-add-title-popup"><br>
-                <label for="date">Due Date:</label>
-                <input type="date" name="date" class="input-add-date-popup  input-add-task-popup" id="input-add-date-popup"><br>
-                <label for="desc">Description:</label>
-                <textarea name="desc" class="input-add-desc-popup  input-add-task-popup" id="input-add-desc-popup" rows="4" cols="50"></textarea><br>
-                <label for="priority">Priority:</label>
+                
+                <input type="text" name="title" class="input-add-title-popup input-add-task-popup" id="input-add-title-popup" placeholder="Title"><br>
+                
+                <input type="date" name="date" class="input-add-date-popup  input-add-task-popup" id="input-add-date-popup" placeholder="Due Date"><br>
+                
+                <textarea name="desc" class="input-add-desc-popup  input-add-task-popup" id="input-add-desc-popup" rows="4" cols="50" placeholder="Description"></textarea><br>
+                
+                
 
                 <select name="priority" id="input-add-priority-popup" class="input-add-priority-popup  input-add-task-popup">
+                      <option value="" disabled selected hidden>Priority</option>  
                       <option value="1">High</option>
                       <option value="5">Medium</option>
                       <option value="10">Low</option>
                 </select>
 
-                <label for="project">Project:</label>
+                
                 <select name="project" id="input-add-project-popup" class="input-add-project-popup  input-add-task-popup">
+                    <option value="" disabled selected hidden>Project</option>
                     <option value="default">Default</option>
                 </select>
                 
