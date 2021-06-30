@@ -127,6 +127,7 @@ export default class UI{
         }
     
         UI.openProject(projectName, this);
+        
       }
 
       static openProject(projectName, projectButton) {
@@ -138,6 +139,8 @@ export default class UI{
         projectButton.classList.add('active');
         UI.closeAddProjectPopup();
         UI.loadProjectContent(projectName);
+        // UI.initAddTaskButtons();
+        // console.log(document.getElementById("add-task-popup"));
       }
 
       static loadProjectContent(projectName) {
@@ -145,7 +148,7 @@ export default class UI{
         projectPreview.innerHTML = `
             <h1 id="project-name">${projectName}</h1>
             <div class="tasks-list" id="tasks-list"></div>`;
-        console.log(projectName);
+        // console.log(projectName);
         const taskName=Storage.getTodoList().projects.filter((project)=>project.project_Name===projectName);
         // console.log(taskName[0].tasks[0].title);
         for(let i=0;i<taskName[0].tasks.length;i++){
@@ -154,6 +157,14 @@ export default class UI{
             let dueDate=taskName[0].tasks[i].dueDate;
             UI.createTask(name,dueDate);
         }
+
+        // console.log(UI.initAddTaskButtons());
+
+        const addTaskButton = document.getElementById("button-add-task");
+        // console.log(addTaskButton);
+        addTaskButton.addEventListener('click',()=>{console.log("success")});
+
+
       }
     
       static deleteProject(projectName, button) {
@@ -201,7 +212,7 @@ export default class UI{
     static openAddTaskPopup(){
         if(Storage.getTodoList().projects.length===0) {alert("Please add project first."); return;}
         const addTaskPopup = document.getElementById('add-task-popup');
-        // const addTaskButton = document.getElementById('button-add-task');
+        const addTaskButton = document.getElementById('button-add-task');
 
     // UI.closeAllPopups();
     addTaskPopup.classList.add('active');
@@ -209,6 +220,7 @@ export default class UI{
     // addTaskButton.classList.add('active');
         
     }
+    
 
     static closeAddTaskPopup() {
         const addTaskPopup = document.getElementById('add-task-popup');
@@ -226,7 +238,7 @@ export default class UI{
         addDescPopupInput.value = '';
         addPriorityPopupInput.value = '';
         addProjectPopupInput.value = '';
-      }
+    }
     
     static addTask(){
     const projectName = document.querySelector('.project-drop-down').value;
@@ -235,7 +247,7 @@ export default class UI{
     const addDescPopupInput = document.getElementById('input-add-desc-popup');
     const addPriorityPopupInput = document.getElementById('input-add-priority-popup');
     // const addProjectPopupInput = document.querySelector('.project-drop-down');
-    console.log(addTaskPopupInput);
+    // console.log(addTaskPopupInput);
     const taskName = addTaskPopupInput.value;
     const taskDate = addDatePopupInput.value;
     const taskDesc = addDescPopupInput.value;
@@ -255,7 +267,7 @@ export default class UI{
 
     Storage.addTask(projectName, new Task(taskName,taskDesc,taskDate,taskPriority));
 
-    // UI.createTask(taskName, 'No date');
+    
     UI.closeAddTaskPopup();
     }
 
