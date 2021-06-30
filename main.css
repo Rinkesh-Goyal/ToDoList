@@ -107,6 +107,8 @@ header{
   .button-add-project.active {
     display: none;
   }
+
+
 .button-project.active,
 .button-default-project.active
 {
@@ -197,17 +199,75 @@ header{
     padding: 0 1rem;
     margin-bottom: 1rem;
   }
-
-  /* footer */
-  footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .button-add-task {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .button-add-task.active {
+    display: none;
+  }
+  
+  .button-add-task:hover {
+    background-color: #ddd;
+  }
+  .button-task {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    padding: 0.5rem;
-    background-color: var(--primary-dark);
-    color: var(--primary-light);
+    padding: 1rem;
+    background-color: var(--primary-light);
+    cursor: default;
+    height: 3rem;
+  }
+  
+  .button-task:hover {
+    background-color: #ddd;
+  }
+  
+  .left-task-panel {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fa-circle {
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  
+  .task-content {
+    cursor: pointer;
+  }
+  
+  .task-content.active {
+    display: none;
+  }
+  .button-task .right-task-panel i {
+    visibility: hidden;
+    cursor: pointer;
+  }
+  
+  .button-task:hover .right-task-panel i {
+    visibility: visible;
+  }  
+
+  .right-task-panel {
+    display: flex;
+    align-items: center;
+    margin-left: 35rem;
+  }
+  
+  .left-task-panel:hover,
+  .right-task-panel:hover{
+    font-weight: bold;
+  }
+  .due-date {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  .tasks-list{
+    
   }
