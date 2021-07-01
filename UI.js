@@ -107,7 +107,7 @@ export default class UI{
     
     static initProjectButtons() {
         const projectButtons = document.querySelectorAll('[data-project-button]');
-        
+        console.log(projectButtons);
         projectButtons.forEach((projectButton) =>{
             // console.log(projectButton);
           projectButton.addEventListener('click', UI.handleProjectButton)}
@@ -119,7 +119,8 @@ export default class UI{
 
       static handleProjectButton(e) {
         const projectName = this.children[0].children[1].textContent;
-        // console.log(projectName);
+        // console.log(this.children[0]);
+        console.log(e);
         // console.log(e.target.classList.contains('fa-times'))
         if (e.target.classList.contains('fa-times')) {
           UI.deleteProject(projectName, this);
@@ -176,6 +177,7 @@ export default class UI{
 
       static clearProjects() {
         const projectsList = document.getElementById('projects-list');
+        // console.log(projectsList);
         projectsList.textContent = '';
       }
 
